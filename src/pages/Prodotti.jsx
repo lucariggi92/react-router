@@ -1,26 +1,29 @@
-import axios from "axios"
-import { useEffect, useState } from "react"
-
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Prodotti() {
-    const [products, setProducts] = useState([]);
+const [products, setProducts] =useState([]);
+  
 
-    useEffect(() =>
-        axios.get("https://fakestoreapi.com/products").then(resp=> { console.log(resp.data);setProducts(resp.data);
-        }).catch(err => console.error(err)), []);
 
+    useEffect(()=>{
+        axios.get("https://fakestoreapi.com/products").then((resp)=>{
+          setProducts(resp.data)
+        })
+    })
 
     return (
 
         <section>
-            <h2>Lista Prodotti</h2>
+            <h2>lista</h2>
             <ul>
-                {products.map((product) => (
-                    <li key={product.id}>{product.title}</li>
-                ))}
-
+                {products.map((cuProduct)=>
+                <li key ={cuProduct.id}>{cuProduct.title}</li>
+                )}
             </ul>
-
+            
+          
         </section>
     )
 }
