@@ -3,27 +3,47 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Prodotti() {
-const [products, setProducts] =useState([]);
-  
+    const [products, setProducts] = useState([]);
 
 
-    useEffect(()=>{
-        axios.get("https://fakestoreapi.com/products").then((resp)=>{
-          setProducts(resp.data)
+
+    useEffect(() => {
+        axios.get("https://fakestoreapi.com/products").then((resp) => {
+            setProducts(resp.data)
         })
     })
 
     return (
 
-        <section>
-            <h2>lista</h2>
-            <ul>
-                {products.map((cuProduct)=>
-                <li key ={cuProduct.id}>{cuProduct.title}</li>
+        <main className=" container  ">
+
+            <h2 className="p-5 text-center">I Nostri Prodotti</h2>
+
+            <div className="row  gy-4 mt-2 d-flex justify-content-center ">
+
+
+                {products.map((cuProduct) => (
+
+                    <>
+                        <div className=" col-12 col-sm-6 col-md-4 col-lg-3 border p-4 d-flex flex-column justify-content-between m-2 " key={cuProduct.id}>
+
+                            <img src={cuProduct.image} className="img-fluid" />
+                            <h5 className="mt-4">{cuProduct.title}</h5>
+                        </div>
+                    </>
+                )
                 )}
-            </ul>
-            
-          
-        </section>
+
+            </div>
+
+
+
+
+
+        </main>
+
+
+
+
     )
 }

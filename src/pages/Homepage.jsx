@@ -4,12 +4,12 @@ export default function Homepage() {
 
     return (
 
-        <>
+    
 
 
-            <main>
+            <main className="bg-homepage-luca d-flex justify-content-center align-items-center">
 
-                <h1>Ciao Benvenuto nella notra Homepage</h1>
+                <h1 className="text-white-50 fs-1">Benvenuto su Visit SANCATALDO</h1>
             </main>
 
 
@@ -17,7 +17,7 @@ export default function Homepage() {
 
 
 
-        </>
+
 
 
     )

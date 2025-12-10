@@ -1,8 +1,9 @@
 export default function Footer (){
     return (
-        <footer>
-            <hr />
-            <p>Mad by Luca</p>
+        <footer className="bg-dark p-5">
+
+       
+            <p className="text-light">Creato da Luca Riggi</p>
         </footer>
     )
 
