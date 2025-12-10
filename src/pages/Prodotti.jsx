@@ -25,7 +25,9 @@ export default function Prodotti() {
                 {products.map((cuProduct) => (
 
                     <>
-                        <Link className=" col-12 col-sm-6 col-md-4 col-lg-3 border p-4 d-flex flex-column justify-content-between m-2 rounded-3" key={cuProduct.id}>
+                        <Link className=" col-12 col-sm-6 col-md-4 col-lg-3 border p-4 d-flex flex-column justify-content-between m-2 rounded-3" 
+                        key={cuProduct.id} 
+                        to={`/prodotti/${cuProduct.id}`}>
 
                             <img src={cuProduct.image} className="img-fluid" />
                             <h5 className="mt-4">{cuProduct.title}</h5>
