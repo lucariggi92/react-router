@@ -23,6 +23,9 @@ export default function SingleProduct() {
 
             })
     }, [id]);
+
+    if (!product) return null;
+    
     return (
         <section>
             <h1>{product.title}</h1>
