@@ -13,23 +13,27 @@ export default function SingleProduct() {
 
         axios.get(`https://fakestoreapi.com/products/${id}`)
             .then((resp) => {
-                setProduct(resp.data);
-            }).catch((err) => {
-                console.log(err);
-                alert("Il prodotto non esiste");
-                navigate("/prodotti");
-            }).finally(() => {
-                setLoading(false);
+                if (resp.data) {
+                    setProduct(resp.data);
+                } else {
+                    navigate("/prodotti");
+                }
+
+           
 
             })
     }, [id]);
 
-    if (!product) return null;
-    
+
+
     return (
-        <section>
-            <h1>{product.title}</h1>
-        </section>
+        <>
+
+            {product!== null && (
+                <h1>{product.title}</h1>
+            )}
+
+        </>
     )
 
 }
